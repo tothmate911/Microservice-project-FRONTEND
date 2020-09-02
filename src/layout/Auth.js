@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../Login.css";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Auth = (props) => {
-  let { operation } = props;
-  let operationClass = operation === "Sign In" ? "signin" : "signup";
+  let { operation, url } = props;
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    axios
+      .post(url, {
+        username: "dinnye",
+        password: "admin",
+      })
+      .then((response) => {
+        const token = response.data.token;
+        console.log(token);
+        localStorage.setItem("token", token);
+        localStorage.setItem("username", username);
+      });
+  }, [url, username, password]);
+
   const RegistrationButton = (
     <Link to="/registration">
       <button
@@ -25,7 +46,7 @@ const Auth = (props) => {
           <div className="card card-signin my-5">
             <div className="card-body">
               <h5 className="card-title text-center">{operation}</h5>
-              <form className={`form-signin ${operationClass}`}>
+              <form className="form-signin" onSubmit={handleSubmit}>
                 <div className="form-label-group">
                   <input
                     type="username"
@@ -34,6 +55,7 @@ const Auth = (props) => {
                     placeholder="Username address"
                     required
                     autoFocus
+                    onChange={(event) => setUsername(event.target.value)}
                   />
                   <label htmlFor="inputUsername">Username</label>
                 </div>
@@ -45,6 +67,9 @@ const Auth = (props) => {
                     className="form-control"
                     placeholder="Password"
                     required
+                    onChange={(event) => {
+                      setPassword(event.target.value);
+                    }}
                   />
                   <label htmlFor="inputPassword">Password</label>
                 </div>
