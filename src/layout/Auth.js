@@ -7,24 +7,29 @@ const Auth = (props) => {
   let { operation, url } = props;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [tryAuth, setTryAuth] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setTryAuth(true);
   };
 
   useEffect(() => {
-    axios
-      .post(url, {
-        username: "dinnye",
-        password: "admin",
-      })
-      .then((response) => {
-        const token = response.data.token;
-        console.log(token);
-        localStorage.setItem("token", token);
-        localStorage.setItem("username", username);
-      });
-  }, [url, username, password]);
+    if (tryAuth) {
+      axios
+        .post(url, {
+          username: username,
+          password: password,
+        })
+        .then((response) => {
+          const token = response.data.token;
+          setTryAuth(false);
+          console.log("llllll");
+          localStorage.setItem("token", token);
+          localStorage.setItem("username", username);
+        });
+    }
+  }, [url, username, password, tryAuth]);
 
   const RegistrationButton = (
     <Link to="/registration">
