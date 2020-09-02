@@ -1,5 +1,5 @@
 import React from "react";
-import loading from "./loading.gif";
+import loading from "../images/loading.gif";
 import ProductCard from "./ProductCard";
 
 const ProductList = ({ products, productsAreLoading }) => {
