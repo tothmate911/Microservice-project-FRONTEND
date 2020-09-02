@@ -11,34 +11,29 @@ const content = (
           <div className="col"></div>
           <Logo />
           <div className="d-flex justify-content-end col w-100">
-            <div className="p-2">
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
 
-              <div
-                className="collapse navbar-collapse p-2"
-                id="navbarSupportedContent"
-              >
-                <ul className="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-                  <li className="nav-item">
-                    <Link className="nav-link" to="#">
-                      <Login />
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="#"></Link>
-                  </li>
-                </ul>
-              </div>
+            <div
+              className="collapse navbar-collapse p-2"
+              id="navbarSupportedContent"
+            >
+              <ul className="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    <Login />
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

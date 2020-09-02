@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./page/Home";
 import Header from "./layout/Header";
 import { ProductProvider } from "./context/ProductContext";
+import LoginPage from "./page/LoginPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Router>
           <Header />
           <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={LoginPage} />
         </Router>
       </ProductProvider>
     </div>
