@@ -1,35 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../Login.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Auth = (props) => {
   let { operation, url } = props;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [tryAuth, setTryAuth] = useState(false);
+
+  let history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTryAuth(true);
+    axios
+      .post(url, {
+        username: username,
+        password: password,
+      })
+      .then((response) => {
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        localStorage.setItem("username", username);
+        history.push("/");
+      });
   };
-
-  useEffect(() => {
-    if (tryAuth) {
-      axios
-        .post(url, {
-          username: username,
-          password: password,
-        })
-        .then((response) => {
-          const token = response.data.token;
-          setTryAuth(false);
-          console.log("llllll");
-          localStorage.setItem("token", token);
-          localStorage.setItem("username", username);
-        });
-    }
-  }, [url, username, password, tryAuth]);
 
   const RegistrationButton = (
     <Link to="/registration">
@@ -92,6 +86,7 @@ const Auth = (props) => {
                     Remember password
                   </label>
                 </div>
+
                 <button
                   className="btn btn-lg btn-primary btn-block text-uppercase"
                   type="submit"
