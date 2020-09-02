@@ -20,7 +20,7 @@ const content = (
     <Button>
       <Link>
         <h6 className="open-sans">
-          <i class="fas fa-sign-in-alt"></i> Sign In
+          <i class="fas fa-sign-in-alt"/> Sign In
         </h6>
       </Link>
     </Button>

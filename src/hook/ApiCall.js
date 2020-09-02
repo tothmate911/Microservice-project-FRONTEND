@@ -8,7 +8,7 @@ const useApiCall = (url) => {
   useEffect(() => {
     setLoading(true);
     axios.get(url).then((response) => {
-      console.log(response);
+      //console.log(response);
       setFetchedData(response.data);
       setLoading(false);
     });
