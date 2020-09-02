@@ -5,6 +5,7 @@ import Home from "./page/Home";
 import Header from "./layout/Header";
 import { ProductProvider } from "./context/ProductContext";
 import LoginPage from "./page/LoginPage";
+import RegistrationPage from "./page/RegistrationPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Header />
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/registration" component={RegistrationPage} />
         </Router>
       </ProductProvider>
     </div>

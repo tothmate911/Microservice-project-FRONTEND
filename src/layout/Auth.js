@@ -1,9 +1,22 @@
 import React from "react";
 import "../Login.css";
+import { Link } from "react-router-dom";
 
 const Auth = (props) => {
   let { operation } = props;
   let operationClass = operation === "Sign In" ? "signin" : "signup";
+  const RegistrationButton = (
+    <Link to="/registration">
+      <button
+        className="btn btn-lg btn-primary btn-block text-uppercase mt-2 bg-white text-secondary"
+        type="button"
+      >
+        Sign Up
+      </button>
+    </Link>
+  );
+
+  const registration = operation === "Sign In" ? RegistrationButton : "";
 
   const content = (
     <div className="container">
@@ -55,6 +68,7 @@ const Auth = (props) => {
                 >
                   {operation}
                 </button>
+                {registration}
               </form>
             </div>
           </div>

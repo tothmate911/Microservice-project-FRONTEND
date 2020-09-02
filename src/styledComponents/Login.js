@@ -18,7 +18,7 @@ const Button = styled.div`
 const content = (
   <React.Fragment>
     <Button>
-      <Link to="/">
+      <Link to="/login">
         <h6 className="open-sans">
           <i className="fas fa-sign-in-alt"></i> Sign In
         </h6>
