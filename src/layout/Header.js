@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const content = (
   <React.Fragment>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="w-100">
         <div className="row w-100">
           <div className="col"></div>
@@ -13,7 +13,7 @@ const content = (
           <div className="d-flex justify-content-end col w-100">
             <div className="p-2">
               <button
-                class="navbar-toggler"
+                className="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
@@ -21,21 +21,21 @@ const content = (
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
               </button>
 
               <div
-                class="collapse navbar-collapse p-2"
+                className="collapse navbar-collapse p-2"
                 id="navbarSupportedContent"
               >
-                <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-                  <li class="nav-item">
-                    <Link class="nav-link" to="#">
+                <ul className="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+                  <li className="nav-item">
+                    <Link className="nav-link" to="#">
                       <Login />
                     </Link>
                   </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" to="#"></Link>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="#"></Link>
                   </li>
                 </ul>
               </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProductCard = (props) => {
-  let { productName, imageUrl, price, description } = props.product;
+  let { name, imageUrl, price, description } = props.product;
   let imgClassNames = "img.fluid m-0";
 
   const addDefaultSrc = (ev) => {
@@ -11,9 +11,6 @@ const ProductCard = (props) => {
 
   return (
     <div className="card">
-      <div className="card-body">
-        <p className="card-text">{productName}</p>
-      </div>
       <div className="image-container">
         <img
           className={imgClassNames}
@@ -24,10 +21,13 @@ const ProductCard = (props) => {
         ></img>
       </div>
       <div className="card-body">
-        <p className="card-text">
-          <h3>{price} USD</h3>
+        <div className="card-text">
+          <h6 className="text-secondary">
+            <b>{price} USD</b>
+          </h6>
+          <h4 className="card-text">{name}</h4>
           {description}
-        </p>
+        </div>
       </div>
     </div>
   );
