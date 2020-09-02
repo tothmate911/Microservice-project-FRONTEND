@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const content = (
   <React.Fragment>
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-white shadow">
       <div className="w-100">
         <div className="row w-100">
           <div className="col"></div>

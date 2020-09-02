@@ -8,7 +8,7 @@ const HomeButton = styled.div`
   a:active,
   a:link,
   a:visited {
-    color: white !important;
+    color: black !important;
   }
 `;
 
