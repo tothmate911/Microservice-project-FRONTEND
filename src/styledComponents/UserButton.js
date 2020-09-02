@@ -5,17 +5,17 @@ import Button from "./Button";
 const content = (
   <React.Fragment>
     <Button>
-      <Link to="/login">
+      <Link to="/user">
         <h6 className="open-sans">
-          <i className="fas fa-sign-in-alt"></i> Sign In
+          <i class="far fa-user"></i> {localStorage.getItem("username")}
         </h6>
       </Link>
     </Button>
   </React.Fragment>
 );
 
-function Login() {
+function UserButton() {
   return content;
 }
 
-export default Login;
+export default UserButton;
