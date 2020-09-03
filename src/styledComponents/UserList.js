@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Spinner } from "react-bootstrap";
+import { Spinner, Button } from "react-bootstrap";
 
 const UserList = ({ users, usersAreLoading }) => {
   let content = (
@@ -11,8 +11,10 @@ const UserList = ({ users, usersAreLoading }) => {
 
   if (!usersAreLoading && users[0]) {
     content = users[0].map((user) => (
-      <li key={user.id}>
-        <Link to={`/UserProduct/${user.id}`}>{user.username}</Link>
+      <li className="list-group-item" key={user.id}>
+        <Button>
+          <Link to={`/UserProduct/${user.id}`}>{user.username}</Link>
+        </Button>
       </li>
     ));
   }

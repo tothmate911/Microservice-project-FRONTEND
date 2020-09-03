@@ -12,10 +12,12 @@ function UserProductsList() {
     .then((response) => setProds(response.data));
 
   let content = (
-    <div className="card-columns">
-      {prods.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+    <div className="container p-5 mb-3">
+      <div className="card-columns">
+        {prods.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
   return content;

@@ -8,9 +8,11 @@ function Header() {
   let history = useHistory();
 
   const login = (
-    <Link className="nav-link" to="/login">
-      <Login />
-    </Link>
+    <Button>
+      <Link className="nav-link" to="/login">
+        <Login />
+      </Link>
+    </Button>
   );
 
   const logout = () => {
