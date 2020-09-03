@@ -1,5 +1,6 @@
 import React from "react";
 import loading from "./loading.gif";
+import {Link} from "react-router-dom";
 
 const UserList = ({users, usersAreLoading}) => {
 
@@ -12,8 +13,8 @@ const UserList = ({users, usersAreLoading}) => {
     if (!usersAreLoading && users[0]) {
         content = (
             users[0].map((user) => (
-                <li key={user.id}>{user.username}
-                    <a href={`http://localhost:8762/product-service/products/user/${user.id}`}>Products</a>
+                <li key={user.id}>
+                    <Link to={`/UserProduct${user.id}`}>{user.username}</Link>
                 </li>
             )));
     }

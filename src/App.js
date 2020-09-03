@@ -6,23 +6,23 @@ import Header from "./layout/Header";
 import {ProductProvider} from "./context/ProductContext";
 import Admin from "./page/Admin";
 import {UserProvider} from "./context/UserContext";
+import UserProduct from "./page/UserProduct";
 
 function App() {
     return (
         <div className="App">
-            <ProductProvider>
-                <Router>
+            <Router>
+                <ProductProvider>
                     <Header/>
                     <Route exact path="/" component={Home}/>
-                </Router>
-            </ProductProvider>
+                </ProductProvider>
 
-            <UserProvider>
-                <Router>
-                    <Header/>
+                <UserProvider>
                     <Route exact path="/admin" component={Admin}/>
-                </Router>
-            </UserProvider>
+                </UserProvider>
+
+                <Route exact path="/UserProduct:id" component={UserProduct}/>
+            </Router>
         </div>
     );
 }
