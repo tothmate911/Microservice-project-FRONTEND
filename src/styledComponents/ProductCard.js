@@ -23,7 +23,7 @@ const ProductCard = (props) => {
       <div className="card-body">
         <div className="card-text">
           <h6 className="text-secondary">
-            <b>{price} USD</b>
+            <b>${price}</b>
           </h6>
           <h4 className="card-text">{name}</h4>
           {description}
