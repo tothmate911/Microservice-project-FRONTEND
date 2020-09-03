@@ -16,16 +16,20 @@ function Header() {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
-
     history.push("/");
     window.location.reload();
   };
+
+  let userPageUrl =
+    localStorage.getItem("username") === "admin"
+      ? "/admin"
+      : `/UserProduct/${localStorage.getItem("userid")}`;
 
   const user = (
     <Button>
       <div className="row">
         <div className="col">
-          <Link className="nav-link" to="/user">
+          <Link className="nav-link" to={userPageUrl}>
             {localStorage.getItem("username")}
           </Link>
         </div>

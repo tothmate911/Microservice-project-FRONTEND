@@ -21,6 +21,7 @@ const Auth = (props) => {
         const token = response.data.token;
         localStorage.setItem("token", token);
         localStorage.setItem("username", username);
+        localStorage.setItem("userid", response.data.userid);
         history.push("/");
         window.location.reload();
       });
