@@ -22,6 +22,7 @@ const Auth = (props) => {
         localStorage.setItem("token", token);
         localStorage.setItem("username", username);
         history.push("/");
+        window.location.reload();
       });
   };
 

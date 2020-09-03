@@ -16,7 +16,9 @@ function Header() {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
+
     history.push("/");
+    window.location.reload();
   };
 
   const user = (
