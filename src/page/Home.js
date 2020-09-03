@@ -7,7 +7,7 @@ function Home() {
 
   const content = (
     <React.Fragment>
-      <div className="page container p-5 mb-3">
+      <div className="container p-5 mb-3">
         <ProductList
           products={products}
           productsAreLoading={productsAreLoading}

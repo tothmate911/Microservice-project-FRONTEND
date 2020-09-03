@@ -38,7 +38,7 @@ function Header() {
         <div className="col">
           <Link to="/" onClick={logout}>
             <h5 className="mt-2">
-              <i class="fas fa-power-off"></i>
+              <i className="fas fa-power-off"></i>
             </h5>
           </Link>
         </div>
