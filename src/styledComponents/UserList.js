@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Spinner, Button } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
+import Button from "./Button";
 
 const UserList = ({ users, usersAreLoading }) => {
   let content = (

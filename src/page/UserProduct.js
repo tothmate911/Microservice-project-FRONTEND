@@ -9,7 +9,7 @@ function UserProductsList() {
 
   let userProducts = axios
     .get(`http://localhost:8762/product-service/products/user/${id}`)
-    .then((response) => setProds(response.data));
+    .then((response) => setProds(response.data), prods);
 
   let content = (
     <div className="container p-5 mb-3">
