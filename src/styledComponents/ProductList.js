@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 const ProductList = ({ products, productsAreLoading }) => {
   let content = (
     <div className="d-flex justify-content-center">
-      <img src={loading} alt=""></img>
+      <img src={loading} alt=""/>
     </div>
   );
 

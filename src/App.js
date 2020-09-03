@@ -20,6 +20,22 @@ function App() {
       </ProductProvider>
     </div>
   );
+    return (
+        <div className="App">
+            <Router>
+                <ProductProvider>
+                    <Header/>
+                    <Route exact path="/" component={Home}/>
+                </ProductProvider>
+
+                <UserProvider>
+                    <Route exact path="/admin" component={Admin}/>
+                </UserProvider>
+
+                <Route exact path="/UserProduct:id" component={UserProduct}/>
+            </Router>
+        </div>
+    );
 }
 
 export default App;
