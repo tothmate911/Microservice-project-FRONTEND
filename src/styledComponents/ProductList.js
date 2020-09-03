@@ -1,11 +1,11 @@
 import React from "react";
-import loading from "../images/loading.gif";
 import ProductCard from "./ProductCard";
+import Spinner from "react-bootstrap/Spinner";
 
 const ProductList = ({ products, productsAreLoading }) => {
   let content = (
     <div className="d-flex justify-content-center">
-      <img src={loading} alt=""></img>
+      <Spinner animation="grow" variant="light" />
     </div>
   );
 
