@@ -19,7 +19,7 @@ function App() {
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/login" component={LoginPage}/>
                     <Route exact path="/registration" component={RegistrationPage}/>
-                    <Route exact path="/UserProduct/id" component={UserProduct}/>
+                    <Route exact path="/UserProduct/:id" component={UserProduct}/>
                 </ProductProvider>
                 <UserProvider>
                     <Route exact path="/admin" component={Admin}/>

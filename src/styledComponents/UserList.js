@@ -12,7 +12,7 @@ const UserList = ({ users, usersAreLoading }) => {
   if (!usersAreLoading && users[0]) {
     content = users[0].map((user) => (
       <li key={user.id}>
-        <Link to={`/UserProduct${user.id}`}>{user.username}</Link>
+        <Link to={`/UserProduct/${user.id}`}>{user.username}</Link>
       </li>
     ));
   }

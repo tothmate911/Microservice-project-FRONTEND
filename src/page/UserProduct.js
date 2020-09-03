@@ -6,7 +6,6 @@ import {useParams} from "react-router";
 function UserProductsList() {
 
     const [prods, setProds] = useState([]);
-
     let {id} = useParams();
 
     let userProducts = axios.get(
@@ -20,7 +19,6 @@ function UserProductsList() {
             ))}
         </div>
     );
-
     return content;
 }
 
